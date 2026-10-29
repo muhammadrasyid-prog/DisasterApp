@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val adapterDisaster = DisasterAdapter(generateDummy()) { disaster ->
-            Toast.makeText(this@MainActivity, "Kamu memilih ${disaster.nameDisaster}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@MainActivity, "You clicked on ${disaster.nameDisaster}", Toast.LENGTH_SHORT).show()
         }
 
         with(binding) {
