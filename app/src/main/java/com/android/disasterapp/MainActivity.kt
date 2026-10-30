@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.disasterapp.databinding.ActivityMainBinding
 
@@ -26,21 +27,21 @@ class MainActivity : AppCompatActivity() {
         with(binding) {
             rvDisaster.apply {
                 adapter = adapterDisaster
-                layoutManager = LinearLayoutManager(this@MainActivity)
+                layoutManager = GridLayoutManager(this@MainActivity, 2)
             }
         }
     }
 
     fun generateDummy(): List<Disaster> {
         return listOf(
-            Disaster(nameDisaster = "Tsunami", disasterType = "Natural"),
-            Disaster(nameDisaster = "Volcanic Eruption", disasterType = "Natural"),
-            Disaster(nameDisaster = "Earthquake", disasterType = "Natural"),
-            Disaster(nameDisaster = "Flood", disasterType = "Natural"),
-            Disaster(nameDisaster = "Fire", disasterType = "Natural"),
-            Disaster(nameDisaster = "Nuclear Accident", disasterType = "Man- made "),
-            Disaster (nameDisaster = "Terrorist Attack", disasterType = "Man- made "),
-            Disaster (nameDisaster = "War", disasterType = "Man-made")
+            Disaster(nameDisaster = "Tsunami", disasterType = "Natural", imageRes = R.drawable.img_tsunami),
+            Disaster(nameDisaster = "Volcanic Eruption", disasterType = "Natural", imageRes = R.drawable.img_volcano),
+            Disaster(nameDisaster = "Earthquake", disasterType = "Natural", imageRes = R.drawable.img_earthquake),
+            Disaster(nameDisaster = "Flood", disasterType = "Natural", imageRes = R.drawable.img_flood),
+            Disaster(nameDisaster = "Fire", disasterType = "Natural", imageRes = R.drawable.img_fire),
+            Disaster(nameDisaster = "Nuclear Accident", disasterType = "Man-made", imageRes = R.drawable.img_nuclear),
+            Disaster (nameDisaster = "Terrorist Attack", disasterType = "Man-made", imageRes = R.drawable.img_terror),
+            Disaster (nameDisaster = "War", disasterType = "Man-made", imageRes = R.drawable.img_war)
         )
     }
 }

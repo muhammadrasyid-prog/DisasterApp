@@ -18,6 +18,7 @@ class DisasterAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: Disaster) {
             with(binding) {
+                imgDisaster.setImageResource(data.imageRes)
                 txtDisasterName.text = data.nameDisaster
                 txtDisasterType.text = data.disasterType
                 itemView.setOnClickListener {
